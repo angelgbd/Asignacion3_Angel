@@ -1,0 +1,375 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202a26;
+  background: #f5f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #202a26;
+  --muted: #59655f;
+  --line: #dedfd9;
+  --line-strong: #cdd1c9;
+  --surface: #fffefa;
+  --control-hover: #f0f2ec;
+  --disabled-ink: #8a938d;
+  --focus: #176b54;
+  --accent: #176b54;
+  --accent-hover: #105640;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #fffefa;
+  background: #176b54;
+}
+
+.page-shell {
+  width: min(100% - 3rem, 1120px);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border-radius: 0.55rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.header-note,
+.demo-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 3.4rem 2.6rem;
+}
+
+.eyebrow,
+.example-label {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 15ch;
+  margin-bottom: 0.85rem;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.intro-copy {
+  max-width: 52ch;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.demo-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.25rem;
+  white-space: nowrap;
+}
+
+.demo-dot {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: #588d55;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.catalog-section,
+.cart-panel {
+  min-width: 0;
+}
+
+.section-heading,
+.cart-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading h2,
+.cart-heading h2 {
+  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.section-heading p,
+.cart-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.item-count {
+  padding-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: minmax(125px, 1fr) auto auto;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-details h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.product-details p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.product-price {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.button {
+  min-height: 2.65rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+}
+
+.button-secondary {
+  width: 100%;
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: var(--control-hover);
+}
+
+.button:disabled {
+  color: var(--disabled-ink);
+  cursor: not-allowed;
+}
+
+.cart-panel {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: var(--surface);
+}
+
+.cart-heading {
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.cart-count {
+  display: grid;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  place-items: center;
+  padding-inline: 0.4rem;
+  border-radius: 999px;
+  background: #e8eee7;
+  color: #254b35;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1rem;
+  font-size: 0.95rem;
+}
+
+.cart-total strong {
+  font-variant-numeric: tabular-nums;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.5rem 2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+@media (max-width: 860px) {
+  .shop-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .cart-panel {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-shell {
+    width: min(100% - 2rem, 1120px);
+  }
+
+  .header-note {
+    max-width: 10rem;
+    text-align: right;
+  }
+
+  .intro {
+    display: block;
+    padding-block: 2.5rem 2rem;
+  }
+
+  .demo-label {
+    margin-top: 1.2rem;
+  }
+
+  .product-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.9rem;
+  }
+
+  .product-details {
+    grid-column: 1 / -1;
+  }
+
+  .product-price {
+    align-self: center;
+  }
+
+  .product-actions {
+    justify-self: end;
+  }
+
+  .button-primary {
+    padding-inline: 0.75rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="Catálogo de demostración con Web Components reutilizables." />
+    <title>Catálogo · Componentes web</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#inicio" aria-label="Catálogo, inicio">
+          <span class="wordmark-mark" aria-hidden="true">C</span>
+          <span>Catálogo</span>
+        </a>
+        <p class="header-note">Demostración de Web Components</p>
+      </header>
+
+      <main id="inicio">
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">Tienda de escritorio</p>
+            <h1 id="page-title">Elige lo que necesitas.</h1>
+            <p class="intro-copy">Un catálogo pequeño para probar componentes reutilizables, propiedades y eventos.</p>
+          </div>
+          <p class="demo-label"><span class="demo-dot" aria-hidden="true"></span>Productos de demostración</p>
+        </section>
+
+        <div class="shop-layout">
+          <section class="catalog-section" aria-labelledby="catalog-title">
+            <div class="section-heading">
+              <div>
+                <h2 id="catalog-title">Productos</h2>
+                <p>Elige una cantidad y agrégala al carrito.</p>
+              </div>
+              <span class="item-count">3 artículos</span>
+            </div>
+            <div id="product-list" class="product-list"></div>
+          </section>
+
+          <aside class="cart-panel" aria-labelledby="cart-title">
+            <div class="cart-heading">
+              <div>
+                <h2 id="cart-title">Tu carrito</h2>
+                <p>El contenido se actualiza al agregar.</p>
+              </div>
+              <span id="cart-count" class="cart-count" aria-label="Artículos en el carrito">0</span>
+            </div>
+            <tabla-generica id="cart-table" aria-label="Productos en el carrito"></tabla-generica>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cart-total" aria-live="polite">$0.00</strong>
+            </div>
+            <button id="clear-cart" class="button button-secondary" type="button" disabled>Vaciar carrito</button>
+          </aside>
+        </div>
+
+        <p id="catalog-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+      </main>
+
+      <footer class="site-footer">
+        <span>Catálogo de demostración</span>
+        <span>Precios y productos ficticios</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

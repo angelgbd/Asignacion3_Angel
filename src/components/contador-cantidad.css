@@ -1,0 +1,52 @@
+:host {
+  display: inline-block;
+  color: var(--ink, #202a26);
+  font: inherit;
+}
+
+.counter {
+  display: inline-flex;
+  min-height: 2.65rem;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line-strong, #cdd1c9);
+  border-radius: 0.6rem;
+  background: var(--surface, #fffefa);
+}
+
+.step-button {
+  display: grid;
+  width: 2.5rem;
+  min-height: 2.65rem;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.step-button:hover:not(:disabled) {
+  background: var(--control-hover, #f0f2ec);
+}
+
+.step-button:disabled {
+  color: var(--disabled-ink, #8a938d);
+  cursor: not-allowed;
+}
+
+.step-button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--focus, #176b54);
+  outline-offset: -3px;
+}
+
+output {
+  min-width: 2.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
